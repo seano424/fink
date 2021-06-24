@@ -1,27 +1,25 @@
-import { getAllArtworkWithSlug, getGallery, getLandingPage } from "lib/api";
-import Layout from "@/components/Layout";
-import LightboxModal from "@/components/LightboxModal";
+import { getAllArtworkWithSlug, getGallery } from 'lib/api'
+import Layout from '@/components/Layout'
+import LightboxModal from '@/components/LightboxModal'
 
-export default function Prints({ gallery, landingPage }) {
-  const { artPieces } = landingPage[0];
+export default function Prints({ gallery }) {
   return (
-    <Layout artPieces={artPieces}>
+    <Layout>
       <LightboxModal gallery={gallery} />
     </Layout>
-  );
+  )
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const gallery = await getGallery(params.slug, preview);
-  const landingPage = await getLandingPage(preview);
+  const gallery = await getGallery(params.slug, preview)
   return {
-    props: { preview, gallery, landingPage },
+    props: { preview, gallery },
     revalidate: 1,
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const allArtwork = await getAllArtworkWithSlug();
+  const allArtwork = await getAllArtworkWithSlug()
   return {
     paths:
       allArtwork?.map((art) => ({
@@ -30,5 +28,5 @@ export async function getStaticPaths() {
         },
       })) || [],
     fallback: false,
-  };
+  }
 }
