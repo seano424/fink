@@ -41,7 +41,7 @@ export default function LightboxModal({ gallery }) {
           onContextMenu={handleContext}
         >
           <Lightbox
-            enableZoom={false}
+            // enableZoom={false}
             imagePadding={100}
             discourageDownloads={true}
             toolbarButtons={[
@@ -49,29 +49,29 @@ export default function LightboxModal({ gallery }) {
                 url={url}
                 title={'Artwork by Adam Finkelston'}
                 image={urlFor(images[photoIndex]).url()}
-                children={<FacebookIcon round={true} size={30} />}
-                className="relative top-2 mx-1"
+                children={<FacebookIcon round={true} size={35} />}
+                className="relative top-3 mx-1"
               />,
               <TwitterShareButton
                 url={url}
                 title={'Artwork by Adam Finkelston'}
                 image={urlFor(images[photoIndex]).url()}
-                children={<TwitterIcon round={true} size={30} />}
-                className="relative top-2 mx-1"
+                children={<TwitterIcon round={true} size={35} />}
+                className="relative top-3 mx-1"
               />,
               <PinterestShareButton
                 url={url}
                 title={'Artwork by Adam Finkelston'}
                 image={urlFor(images[photoIndex]).url()}
-                children={<PinterestIcon round={true} size={30} />}
-                className="relative top-2 mx-1"
+                children={<PinterestIcon round={true} size={35} />}
+                className="relative top-3 mx-1"
               />,
               <EmailShareButton
                 url={url}
                 title={'Artwork by Adam Finkelston'}
                 image={urlFor(images[photoIndex]).url()}
-                children={<EmailIcon round={true} size={30} />}
-                className="relative top-2 mx-1 mr-4"
+                children={<EmailIcon round={true} size={35} />}
+                className="relative top-3 mx-1 mr-4"
               />,
             ]}
             imageCaption={artPieces[photoIndex].title}
