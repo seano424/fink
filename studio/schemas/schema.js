@@ -12,7 +12,7 @@ import productVariant from './productVariant'
 import aboutPage from './aboutPage'
 import art from './art'
 import artPiece from './artPiece'
-// import landingPage from './landingPage'
+import landingPage from './landingPage'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -29,7 +29,7 @@ export default createSchema({
     // in the studio.
     art,
     artPiece,
-    // landingPage,
+    landingPage,
     aboutPage,
     product,
     vendor,
