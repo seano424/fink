@@ -9,6 +9,10 @@ import category from './category'
 import product from './product'
 import vendor from './vendor'
 import productVariant from './productVariant'
+import aboutPage from './aboutPage'
+import art from './art'
+import artPiece from './artPiece'
+// import landingPage from './landingPage'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -23,6 +27,10 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    art,
+    artPiece,
+    // landingPage,
+    aboutPage,
     product,
     vendor,
     category,
