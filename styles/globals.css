@@ -39,17 +39,23 @@ a {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-/* .ril__closeButton {
+.ril__closeButton {
+  /* display: none !important; */
   background-color: black !important;
-} */
+}
 
-/* .ril__outer {
+.ril__toolbarItemChild,
+.ril__builtinButton {
+  background-color: black !important;
+}
+
+.ril__outer {
   @apply bg-white bg-opacity-95 !important;
 }
 
 .ril-caption-content.ril__captionContent {
   color: black;
-} */
+}
 
 /* 
 .ril-image-current,

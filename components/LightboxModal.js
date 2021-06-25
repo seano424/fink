@@ -41,7 +41,7 @@ export default function LightboxModal({ gallery }) {
           onContextMenu={handleContext}
         >
           <Lightbox
-            // enableZoom={false}
+            enableZoom={false}
             imagePadding={100}
             discourageDownloads={true}
             toolbarButtons={[
@@ -64,15 +64,15 @@ export default function LightboxModal({ gallery }) {
                 title={'Artwork by Adam Finkelston'}
                 image={urlFor(images[photoIndex]).url()}
                 children={<PinterestIcon round={true} size={35} />}
-                className="relative top-3 mx-1"
-              />,
-              <EmailShareButton
-                url={url}
-                title={'Artwork by Adam Finkelston'}
-                image={urlFor(images[photoIndex]).url()}
-                children={<EmailIcon round={true} size={35} />}
                 className="relative top-3 mx-1 mr-4"
               />,
+              // <EmailShareButton
+              //   url={url}
+              //   title={'Artwork by Adam Finkelston'}
+              //   image={urlFor(images[photoIndex]).url()}
+              //   children={<EmailIcon round={true} size={35} />}
+              //   className="relative top-3 mx-1 mr-4"
+              // />,
             ]}
             imageCaption={artPieces[photoIndex].title}
             imagePadding={40}
