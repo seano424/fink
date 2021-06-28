@@ -44,9 +44,9 @@ const SignupForm = ({ status, message, onValidated }) => {
         }}
       >
         {(formik) => (
-          <section className="w-8/12">
+          <section>
             <article>
-              <h1 className="text-4xl p-2 rounded text-white font-black bg-black">
+              <h1 className="text-4xl p-8 rounded text-white font-black bg-black">
                 Send me the Adam Finkelston Artist Newsletter via e-mail!
               </h1>
             </article>
@@ -55,15 +55,15 @@ const SignupForm = ({ status, message, onValidated }) => {
               <article className="flex mt-2">
                 <MyTextInput
                   className={`p-2 ${
-                    status ? 'rounded-tl-md' : 'rounded-l-md'
+                    status === null ? 'rounded-tl-md' : 'rounded-l-md'
                   }  w-full focus:outline-none focus:ring focus:border-blue-300`}
                   name="email"
                   type="email"
-                  placeholder="seanconnery@gmail.com"
+                  placeholder="adamfinkelston@gmail.com"
                 />
                 <button
                   className={`bg-black ${
-                    status ? 'rounded-tr-md' : 'rounded-r-md'
+                    status === null ? 'rounded-tr-md' : 'rounded-r-md'
                   } p-2 text-white self-start cursor-pointer`}
                   disabled={formik.isSubmitting}
                   type="submit"

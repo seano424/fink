@@ -13,8 +13,11 @@ export default function Home({ content, art }) {
     <div className="flex h-screen flex-col">
       <main className="flex-1">
         <LandingPageImages artPieces={artPieces} />
-        <div className="absolute bottom-1/3 md:w-6/12 md:-right-20 z-50">
-          <MailChimpFormContainer />
+        <div className="absolute grid grid-cols-5 mr-40 -mb-40 bottom-2/3 z-50">
+          <div className="col-span-3"></div>
+          <div className="col-span-2">
+            <MailChimpFormContainer />
+          </div>
         </div>
         <article className="z-50 relative bg-white bg-opacity-90 -top-20 -mb-20">
           <LandingPageName color={color} name={name} />
