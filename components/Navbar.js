@@ -1,115 +1,67 @@
-import React from 'react'
-import Tab from './Tab'
+import { useState } from 'react'
+import Hamburger from './Hamburger'
+import NavLinks from './NavLinks'
+import NavLogo from './NavLogo'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  PinterestShareButton,
-  LinkedinShareButton,
-  EmailShareButton,
-} from 'react-share'
-import {
-  FacebookIcon,
-  TwitterIcon,
-  PinterestIcon,
-  LinkedinIcon,
-  EmailIcon,
-} from 'react-share'
 
 export default function Navbar({ prints, photographs }) {
-  const { pathname } = useRouter()
-  const router = useRouter()
-  const url = `https://fink.vercel.app${router.asPath}`
+  const [open, setOpen] = useState(false)
+
+  const toggle = () => {
+    setOpen(!open)
+  }
 
   return (
-    <>
-      <Link href="/">
-        <a className="text-4xl font-black">Adam Finkelston</a>
-      </Link>
-      <article className="flex gap-7">
-        <Link href="/galleries">
-          <a
-            className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
-              pathname === '/galleries' && 'text-design-1 underline'
-            }`}
-          >
-            Galleries
-          </a>
-        </Link>
-        <Tab items={prints} />
-        <Tab items={photographs} />
-        <Link href="/shop">
-          <a
-            className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
-              pathname === '/shop' && 'text-design-1 underline'
-            }`}
-          >
-            Shop
-          </a>
-        </Link>
-        <Link href="/about">
-          <a
-            className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
-              pathname === '/about' && 'text-design-1 underline'
-            }`}
-          >
-            about the artist
-          </a>
-        </Link>
-        <Link href="/contact">
-          <a
-            className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
-              pathname === '/contact' && 'text-design-1 underline'
-            }`}
-          >
-            contact
-          </a>
-        </Link>
-        <Link href="/newsletter">
-          <a
-            className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
-              pathname === '/newsletter' && 'text-design-1 underline'
-            }`}
-          >
-            newsletter
-          </a>
-        </Link>
-        <div className="self-center flex gap-2">
-          <FacebookShareButton
-            url={url}
-            title={'Artwork by Adam Finkelston'}
-            image={url}
-            children={<FacebookIcon round={true} size={30} />}
-          />
-
-          <TwitterShareButton
-            url={url}
-            title={'Artwork by Adam Finkelston'}
-            image={url}
-            children={<TwitterIcon round={true} size={30} />}
-          />
-
-          <PinterestShareButton
-            url={url}
-            description={'Artwork by Adam Finkelston'}
-            media={'https://imgur.com/a/L2zOF7F'}
-            children={<PinterestIcon round={true} size={30} />}
-          />
-          <LinkedinShareButton
-            url={url}
-            title={'Artwork by Adam Finkelston'}
-            image={url}
-            children={<LinkedinIcon round={true} size={30} />}
-          />
-          <EmailShareButton
-            url={url}
-            title={'Artwork by Adam Finkelston'}
-            image={url}
-            children={<EmailIcon round={true} size={30} />}
-          />
+    <nav className="flex w-full h-12 justify-between bg-gray-200">
+      <NavLogo />
+      <NavLinks prints={prints} photographs={photographs} />
+      <Hamburger toggle={toggle} open={open} />
+      {open && (
+        <div className="absolute w-full top-12 bg-gray-100 h-screen z-50">
+          <div className="flex flex-col items-center pt-20 gap-7">
+            <Link href="/galleries">
+              <a
+                onClick={toggle}
+                className="text-2xl font-bold tracking-widest uppercase"
+              >
+                Galleries
+              </a>
+            </Link>
+            <Link href="/shop">
+              <a
+                onClick={toggle}
+                className="text-2xl font-bold tracking-widest uppercase"
+              >
+                Shop local
+              </a>
+            </Link>
+            <Link href="/about">
+              <a
+                onClick={toggle}
+                className="text-2xl font-bold tracking-widest uppercase"
+              >
+                About the artist
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a
+                onClick={toggle}
+                className="text-2xl font-bold tracking-widest uppercase"
+              >
+                Contact the artist
+              </a>
+            </Link>
+            <Link href="/newsletter">
+              <a
+                onClick={toggle}
+                className="text-2xl font-bold tracking-widest uppercase"
+              >
+                Newsletter
+              </a>
+            </Link>
+          </div>
         </div>
-      </article>
-    </>
+      )}
+    </nav>
   )
 }
