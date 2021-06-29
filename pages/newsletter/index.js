@@ -22,7 +22,7 @@ export default function Home({ content, art, about, contact }) {
       <Newsletter />
       <article className="z-50 relative bg-white bg-opacity-100 -top-16 -mb-20">
         <LandingPageName color={color} name={name} />
-        <LandingPageNav />
+        <LandingPageNav title={'Back to Galleries'} />
       </article>
     </LandingPageLayout>
   )

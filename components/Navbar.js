@@ -89,6 +89,13 @@ export default function Navbar({ prints, photographs }) {
             image={url}
             children={<TwitterIcon round={true} size={30} />}
           />
+
+          <PinterestShareButton
+            url={url}
+            description={'Artwork by Adam Finkelston'}
+            media={'https://imgur.com/a/L2zOF7F'}
+            children={<PinterestIcon round={true} size={30} />}
+          />
           <LinkedinShareButton
             url={url}
             title={'Artwork by Adam Finkelston'}

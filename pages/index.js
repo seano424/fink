@@ -19,9 +19,9 @@ export default function Home({ content, art }) {
             <MailChimpFormContainer />
           </div>
         </div>
-        <article className="z-50 relative bg-white bg-opacity-90 -top-20 -mb-20">
+        <article className="z-50 relative bg-white bg-opacity-100 -top-16 -mb-20">
           <LandingPageName color={color} name={name} />
-          <LandingPageNav />
+          <LandingPageNav title={'View Galleries'} />
           <LandingPageBody>
             <LandingPageGalleries art={art} />
           </LandingPageBody>
