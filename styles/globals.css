@@ -24,24 +24,30 @@ a {
 }
 
 /* Lightbox Styles */
+
 .ril-caption-content.ril__captionContent {
   margin: auto !important;
 }
+
 .ril__caption,
 .ril__toolbar {
   background-color: rgba(0, 0, 0, 0) !important;
 }
+
 .ril__closeButton {
   /* display: none !important; */
   background-color: black !important;
 }
+
 .ril__toolbarItemChild,
 .ril__builtinButton {
   background-color: black !important;
 }
+
 .ril__outer {
   @apply bg-white bg-opacity-95 !important;
 }
+
 .ril-caption-content.ril__captionContent {
   color: black;
 }

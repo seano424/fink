@@ -36,7 +36,6 @@ export default function LightboxModal({ gallery }) {
           onContextMenu={handleContext}
         >
           <Lightbox
-            enableZoom={false}
             imagePadding={100}
             discourageDownloads={true}
             toolbarButtons={[

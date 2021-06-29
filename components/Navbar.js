@@ -2,9 +2,25 @@ import React from 'react'
 import Tab from './Tab'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  PinterestShareButton,
+  LinkedinShareButton,
+  EmailShareButton,
+} from 'react-share'
+import {
+  FacebookIcon,
+  TwitterIcon,
+  PinterestIcon,
+  LinkedinIcon,
+  EmailIcon,
+} from 'react-share'
 
 export default function Navbar({ prints, photographs }) {
   const { pathname } = useRouter()
+  const router = useRouter()
+  const url = `https://www.adamfinkelson.com${router.asPath}`
 
   return (
     <>
@@ -21,7 +37,6 @@ export default function Navbar({ prints, photographs }) {
             Galleries
           </a>
         </Link>
-
         <Tab items={prints} />
         <Tab items={photographs} />
         <Link href="/shop">
@@ -33,10 +48,8 @@ export default function Navbar({ prints, photographs }) {
             Shop
           </a>
         </Link>
-
         <Link href="/about">
           <a
-            // onClick={toggleOpen}
             className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
               pathname === '/about' && 'text-design-1 underline'
             }`}
@@ -46,7 +59,6 @@ export default function Navbar({ prints, photographs }) {
         </Link>
         <Link href="/newsletter">
           <a
-            // onClick={toggleOpen}
             className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
               pathname === '/contact' && 'text-design-1 underline'
             }`}
@@ -54,6 +66,40 @@ export default function Navbar({ prints, photographs }) {
             contact & newsletter signup
           </a>
         </Link>
+        <div className="self-center flex gap-2">
+          <FacebookShareButton
+            url={url}
+            title={'Artwork by Adam Finkelston'}
+            // image={urlFor(images[photoIndex]).url()}
+            children={<FacebookIcon round={true} size={30} />}
+          />
+
+          <TwitterShareButton
+            url={url}
+            title={'Artwork by Adam Finkelston'}
+            // image={urlFor(images[photoIndex]).url()}
+            children={<TwitterIcon round={true} size={30} />}
+          />
+
+          <PinterestShareButton
+            url={url}
+            title={'Artwork by Adam Finkelston'}
+            // image={urlFor(images[photoIndex]).url()}
+            children={<PinterestIcon round={true} size={30} />}
+          />
+          <LinkedinShareButton
+            url={url}
+            title={'Artwork by Adam Finkelston'}
+            // image={urlFor(images[photoIndex]).url()}
+            children={<LinkedinIcon round={true} size={30} />}
+          />
+          <EmailShareButton
+            url={url}
+            title={'Artwork by Adam Finkelston'}
+            // image={urlFor(images[photoIndex]).url()}
+            children={<EmailIcon round={true} size={30} />}
+          />
+        </div>
       </article>
     </>
   )
