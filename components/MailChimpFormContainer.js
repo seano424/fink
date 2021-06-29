@@ -24,7 +24,6 @@ const MyTextInput = ({ label, ...props }) => {
 }
 
 const SignupForm = ({ status, message, onValidated }) => {
-  console.log(status, message)
   return (
     <>
       <Formik

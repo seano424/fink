@@ -78,32 +78,40 @@ export default function LightboxModal({ gallery }) {
           />
         </div>
       ) : (
-        <HorizontalScroll images={artPieces} handleLightbox={handleLightbox} />
-        // <section className="py-20 px-24 absolute top-0 pt-10 bg-white bg-opacity-95 min-h-screen">
-        //   <article className="pb-10 flex gap-4 justify-between">
-        //     <h1 className="font-bold uppercase tracking-wider">{title}</h1>
-        //     <div className="flex gap-4">
-        //       <Link href={`/${category}`}>
-        //         <a className="underline">Back to {category}</a>
-        //       </Link>
-        //       <Link href={`/galleries`}>
-        //         <a className="underline">Back to Galleries</a>
-        //       </Link>
-        //     </div>
-        //   </article>
-        //   <article className="grid grid-cols-3 gap-4">
-        //     {artPieces.map((a, idx) => (
-        //       <div onClick={() => handleLightbox(idx)} key={a._key}>
-        //         <Image
-        //           src={imageBuilder(a.asset).url()}
-        //           alt={`${a.title} - Adam Finkelston`}
-        //           width={500}
-        //           height={500}
-        //         />
-        //       </div>
-        //     ))}
-        //   </article>
-        // </section>
+        <>
+          <section className="hidden md:flex">
+            <HorizontalScroll
+              images={artPieces}
+              handleLightbox={handleLightbox}
+            />
+          </section>
+
+          <section className="md:hidden flex flex-col my-10">
+            <article className="pb-10 flex gap-4 justify-between mx-10">
+              <h1 className="font-bold uppercase tracking-wider">{title}</h1>
+              <div className="flex gap-4">
+                <Link href={`/${category}`}>
+                  <a className="underline">Back to {category}</a>
+                </Link>
+                <Link href={`/galleries`}>
+                  <a className="underline">Back to Galleries</a>
+                </Link>
+              </div>
+            </article>
+            <article className="grid grid-cols-3 gap-4">
+              {artPieces.map((a, idx) => (
+                <div onClick={() => handleLightbox(idx)} key={a._key}>
+                  <Image
+                    src={imageBuilder(a.asset).url()}
+                    alt={`${a.title} - Adam Finkelston`}
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              ))}
+            </article>
+          </section>
+        </>
       )}
     </>
   )

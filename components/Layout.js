@@ -6,7 +6,7 @@ export default function Layout({ children, artPieces, photographs, prints }) {
     <>
       <Meta />
       <section
-        className={`z-50 flex bg-white text-gray-700 text-sm justify-around dark:text-white `}
+        className={`z-50 flex overflow-y-scroll bg-white text-gray-700 text-sm justify-around dark:text-white `}
       >
         <Navbar photographs={photographs} prints={prints} />
       </section>

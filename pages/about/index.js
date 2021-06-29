@@ -8,7 +8,6 @@ export default function About({ art, info }) {
   const avatar = info[0].main_image.asset
   const photographs = art.filter((art) => art.category === 'photographs')
   const prints = art.filter((art) => art.category === 'prints')
-  console.log(art)
   return (
     <Layout photographs={photographs} prints={prints}>
       <main className="mt-20">

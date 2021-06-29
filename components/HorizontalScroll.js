@@ -4,22 +4,29 @@ import { useEffect, useState } from 'react'
 
 export default function HorizontalScroll({ images, handleLightbox }) {
   const [delta, setDelta] = useState(0)
+  const [dimensions, setDimensions] = useState(0)
 
   useEffect(() => {
-    scroll && window.addEventListener('wheel', handleWheel, { passive: false })
-    scroll &&
-      window.addEventListener('keydown', handleKeyDown, { passive: false })
-  }, [delta])
+    window.addEventListener('resize', handleResize)
+    if (dimensions > 832) {
+      window.addEventListener('wheel', handleWheel, { passive: false })
+    } else {
+      window.removeEventListener('wheel', handleWheel, { passive: false })
+    }
+  }, [dimensions])
 
-  const handleKeyDown = (e) => {
-    console.log(e.which)
-  }
   const handleWheel = (e) => {
     if (!e.deltaY) {
       return
     }
-    e.currentTarget.scrollLeft += e.deltaY + e.deltaX
-    e.preventDefault()
+    if (dimensions > 832) {
+      e.currentTarget.scrollLeft += e.deltaY + e.deltaX
+      e.preventDefault()
+    }
+  }
+
+  const handleResize = () => {
+    setDimensions(window.innerWidth)
   }
 
   return (
@@ -30,11 +37,7 @@ export default function HorizontalScroll({ images, handleLightbox }) {
       className="flex-1 overflow-y-hidden flex pb-10 mt-20"
     >
       {images.map((image, idx) => (
-        <div
-          onClick={() => handleLightbox(idx)}
-          key={idx}
-          className="min-w-max"
-        >
+        <div key={idx} className="min-w-max">
           <img
             style={{ height: '500px' }}
             src={imageBuilder(image.asset).url()}

@@ -5,21 +5,27 @@ import Link from 'next/link'
 
 export default function HorizontalScroll({ titles, images, content }) {
   const [delta, setDelta] = useState(0)
+  const [dimensions, setDimensions] = useState(0)
 
   useEffect(() => {
-    scroll && window.addEventListener('wheel', handleWheel, { passive: false })
-  }, [delta])
+    window.addEventListener('resize', handleResize)
+    if (dimensions > 832) {
+      window.addEventListener('wheel', handleWheel, { passive: false })
+    }
+  }, [dimensions])
 
   const handleWheel = (e) => {
     if (!e.deltaY) {
       return
     }
-    e.currentTarget.scrollLeft += e.deltaY + e.deltaX
-    e.preventDefault()
+    if (dimensions > 832) {
+      e.currentTarget.scrollLeft += e.deltaY + e.deltaX
+      e.preventDefault()
+    }
   }
 
-  const handleClick = (image, idx) => {
-    console.log(image, idx)
+  const handleResize = () => {
+    setDimensions(window.innerWidth)
   }
 
   return (
@@ -30,11 +36,10 @@ export default function HorizontalScroll({ titles, images, content }) {
       className="flex-1 overflow-y-hidden flex pb-10"
     >
       {images.map((image, idx) => (
-        <div className="min-w-max">
+        <div key={idx} className="min-w-max">
           <Link href={`/${content[idx].category}/${content[idx].slug.current}`}>
             <a>
               <img
-                onClick={() => handleClick(image, idx)}
                 style={{ height: '500px' }}
                 key={image._key}
                 src={imageBuilder(image.asset).url()}

@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Galleries({ content, landingPage }) {
-  console.log(content)
   const { artPieces } = landingPage[0]
   return (
     <Layout artPieces={artPieces}>

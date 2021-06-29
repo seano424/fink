@@ -2,6 +2,7 @@ import React from 'react'
 import { getAllArt, getLandingPage } from '../../lib/api'
 import Layout from '@/components/Layout'
 import GalleriesHorizontalScroll from '@/components/GalleriesHorizontalScroll'
+import Link from 'next/link'
 
 export default function galleries({ content, landingPage }) {
   // const artPieces = landingPage[0].artPieces.map((art) => art.asset)
@@ -9,10 +10,9 @@ export default function galleries({ content, landingPage }) {
   const titles = content.map((c) => c.title)
   const photographs = content.filter((art) => art.category === 'photographs')
   const prints = content.filter((art) => art.category === 'prints')
-  console.log(content)
   return (
     <Layout photographs={photographs} prints={prints}>
-      <main className="mt-20">
+      <main className="mt-10">
         <GalleriesHorizontalScroll
           content={content}
           images={images}
