@@ -20,7 +20,7 @@ import {
 export default function Navbar({ prints, photographs }) {
   const { pathname } = useRouter()
   const router = useRouter()
-  const url = `https://www.adamfinkelson.com${router.asPath}`
+  const url = `https://fink.vercel.app${router.asPath}`
 
   return (
     <>
@@ -79,33 +79,26 @@ export default function Navbar({ prints, photographs }) {
           <FacebookShareButton
             url={url}
             title={'Artwork by Adam Finkelston'}
-            // image={urlFor(images[photoIndex]).url()}
+            image={url}
             children={<FacebookIcon round={true} size={30} />}
           />
 
           <TwitterShareButton
             url={url}
             title={'Artwork by Adam Finkelston'}
-            // image={urlFor(images[photoIndex]).url()}
+            image={url}
             children={<TwitterIcon round={true} size={30} />}
-          />
-
-          <PinterestShareButton
-            url={url}
-            title={'Artwork by Adam Finkelston'}
-            // image={urlFor(images[photoIndex]).url()}
-            children={<PinterestIcon round={true} size={30} />}
           />
           <LinkedinShareButton
             url={url}
             title={'Artwork by Adam Finkelston'}
-            // image={urlFor(images[photoIndex]).url()}
+            image={url}
             children={<LinkedinIcon round={true} size={30} />}
           />
           <EmailShareButton
             url={url}
             title={'Artwork by Adam Finkelston'}
-            // image={urlFor(images[photoIndex]).url()}
+            image={url}
             children={<EmailIcon round={true} size={30} />}
           />
         </div>
