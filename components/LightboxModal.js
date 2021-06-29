@@ -6,15 +6,10 @@ import Lightbox from 'react-image-lightbox'
 import {
   FacebookShareButton,
   TwitterShareButton,
-  EmailShareButton,
   PinterestShareButton,
 } from 'react-share'
-import {
-  FacebookIcon,
-  TwitterIcon,
-  PinterestIcon,
-  EmailIcon,
-} from 'react-share'
+import { FacebookIcon, TwitterIcon, PinterestIcon } from 'react-share'
+import HorizontalScroll from './HorizontalScroll'
 
 export default function LightboxModal({ gallery }) {
   const { artPieces, title, category, slug } = gallery.results[0]
@@ -66,13 +61,6 @@ export default function LightboxModal({ gallery }) {
                 children={<PinterestIcon round={true} size={35} />}
                 className="relative top-3 mx-1 mr-4"
               />,
-              // <EmailShareButton
-              //   url={url}
-              //   title={'Artwork by Adam Finkelston'}
-              //   image={urlFor(images[photoIndex]).url()}
-              //   children={<EmailIcon round={true} size={35} />}
-              //   className="relative top-3 mx-1 mr-4"
-              // />,
             ]}
             imageCaption={artPieces[photoIndex].title}
             imagePadding={40}
@@ -91,31 +79,32 @@ export default function LightboxModal({ gallery }) {
           />
         </div>
       ) : (
-        <section className="py-20 px-24 absolute top-0 pt-10 bg-white bg-opacity-95 min-h-screen">
-          <article className="pb-10 flex gap-4 justify-between">
-            <h1 className="font-bold uppercase tracking-wider">{title}</h1>
-            <div className="flex gap-4">
-              <Link href={`/${category}`}>
-                <a className="underline">Back to {category}</a>
-              </Link>
-              <Link href={`/galleries`}>
-                <a className="underline">Back to Galleries</a>
-              </Link>
-            </div>
-          </article>
-          <article className="grid grid-cols-3 gap-4">
-            {artPieces.map((a, idx) => (
-              <div onClick={() => handleLightbox(idx)} key={a._key}>
-                <Image
-                  src={imageBuilder(a.asset).url()}
-                  alt={`${a.title} - Adam Finkelston`}
-                  width={500}
-                  height={500}
-                />
-              </div>
-            ))}
-          </article>
-        </section>
+        <HorizontalScroll images={artPieces} handleLightbox={handleLightbox} />
+        // <section className="py-20 px-24 absolute top-0 pt-10 bg-white bg-opacity-95 min-h-screen">
+        //   <article className="pb-10 flex gap-4 justify-between">
+        //     <h1 className="font-bold uppercase tracking-wider">{title}</h1>
+        //     <div className="flex gap-4">
+        //       <Link href={`/${category}`}>
+        //         <a className="underline">Back to {category}</a>
+        //       </Link>
+        //       <Link href={`/galleries`}>
+        //         <a className="underline">Back to Galleries</a>
+        //       </Link>
+        //     </div>
+        //   </article>
+        //   <article className="grid grid-cols-3 gap-4">
+        //     {artPieces.map((a, idx) => (
+        //       <div onClick={() => handleLightbox(idx)} key={a._key}>
+        //         <Image
+        //           src={imageBuilder(a.asset).url()}
+        //           alt={`${a.title} - Adam Finkelston`}
+        //           width={500}
+        //           height={500}
+        //         />
+        //       </div>
+        //     ))}
+        //   </article>
+        // </section>
       )}
     </>
   )

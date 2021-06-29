@@ -1,0 +1,50 @@
+import React from 'react'
+import { imageBuilder } from 'lib/sanity'
+import { useEffect, useState } from 'react'
+import { HiArrowsExpand } from 'react-icons/hi'
+
+export default function HorizontalScroll({ images, handleLightbox }) {
+  const [delta, setDelta] = useState(0)
+
+  useEffect(() => {
+    scroll && window.addEventListener('wheel', handleWheel, { passive: false })
+  }, [delta])
+
+  const handleWheel = (e) => {
+    if (!e.deltaY) {
+      return
+    }
+    e.currentTarget.scrollLeft += e.deltaY + e.deltaX
+    e.preventDefault()
+  }
+
+  const handleClick = (image, idx) => {
+    console.log(image, idx)
+  }
+
+  return (
+    <main
+      onWheel={(e) =>
+        setDelta((e.currentTarget.scrollLeft += e.deltaY + e.deltaX))
+      }
+      className="flex-1 overflow-y-hidden flex pb-10 mt-20"
+    >
+      {images.map((image, idx) => (
+        <div
+          onClick={() => handleLightbox(idx)}
+          key={idx}
+          className="min-w-max"
+        >
+          <img
+            onClick={() => handleClick(image, idx)}
+            style={{ height: '500px' }}
+            src={imageBuilder(image.asset).url()}
+            alt="Adam Finkelston"
+            className=""
+          />
+          {/* <p className="text-xl">See more</p> */}
+        </div>
+      ))}
+    </main>
+  )
+}

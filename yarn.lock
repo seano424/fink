@@ -2341,14 +2341,6 @@
     "object-assign" "^4.1.1"
     "scheduler" "^0.20.2"
 
-"react-event-injector@^1.1.2":
-  "integrity" "sha512-gSBsMinT3yeqGOqL6VoeekqdWYgMQ6O2rfYr5zPhNvE5qR3aL+xbn9Kjv4dLeL25gOSRJA/roDre9L5fHj89og=="
-  "resolved" "https://registry.npmjs.org/react-event-injector/-/react-event-injector-1.1.2.tgz"
-  "version" "1.1.2"
-  dependencies:
-    "prop-types" "^15.6.2"
-    "tiny-invariant" "^1.0.1"
-
 "react-fast-compare@^2.0.1":
   "integrity" "sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw=="
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-2.0.4.tgz"
@@ -2874,11 +2866,6 @@
   "version" "2.0.12"
   dependencies:
     "setimmediate" "^1.0.4"
-
-"tiny-invariant@^1.0.1":
-  "integrity" "sha512-ytxQvrb1cPc9WBEI/HSeYYoGD0kWnGEOR8RY6KomWLBVhqz0RgTwVO9dLrGz7dC+nN9llyI7OKAgRq8Vq4ZBSw=="
-  "resolved" "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.1.0.tgz"
-  "version" "1.1.0"
 
 "tiny-warning@^1.0.2":
   "integrity" "sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA=="

@@ -30,9 +30,7 @@ const SignupForm = ({ status, message, onValidated }) => {
       <Formik
         initialValues={{ firstName: '', lastName: '', email: '' }}
         validationSchema={Yup.object({
-          email: Yup.string()
-            .email('Invalid email address')
-            .required('Required'),
+          email: Yup.string().email('Invalid email address'),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -46,7 +44,7 @@ const SignupForm = ({ status, message, onValidated }) => {
         {(formik) => (
           <section>
             <article>
-              <h1 className="text-4xl p-8 rounded text-white font-black bg-black">
+              <h1 className="text-4xl px-8 py-12 rounded text-white font-black bg-black">
                 Send me the Adam Finkelston Artist Newsletter via e-mail!
               </h1>
             </article>
@@ -54,17 +52,13 @@ const SignupForm = ({ status, message, onValidated }) => {
             <Form>
               <article className="flex mt-2">
                 <MyTextInput
-                  className={`p-2 ${
-                    status === null ? 'rounded-tl-md' : 'rounded-l-md'
-                  }  w-full focus:outline-none focus:ring focus:border-blue-300`}
+                  className={`rounded-l w-full focus:outline-none focus:ring focus:border-blue-300 p-3`}
                   name="email"
                   type="email"
-                  placeholder="adamfinkelston@gmail.com"
+                  placeholder="ludwigvonsiegen@gmail.com"
                 />
                 <button
-                  className={`bg-black ${
-                    status === null ? 'rounded-tr-md' : 'rounded-r-md'
-                  } p-2 text-white self-start cursor-pointer`}
+                  className={`bg-black rounded-r p-3 text-white self-start cursor-pointer`}
                   disabled={formik.isSubmitting}
                   type="submit"
                 >
@@ -102,7 +96,7 @@ export default function MailChimpFormContainer() {
   const url = 'https://gmail.us10.list-manage.com/subscribe/post'
   const postUrl = `${url}?u=${process.env.NEXT_PUBLIC_SANITY_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_SANITY_MAILCHIMP_ID}`
   return (
-    <div className="mc__form-containter">
+    <div>
       <MailchimpSubscribe
         url={postUrl}
         render={({ subscribe, status, message }) => (

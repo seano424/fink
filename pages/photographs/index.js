@@ -1,15 +1,28 @@
-import { getPhotographs, getLandingPage } from "lib/api";
-import Galleries from "@/components/Galleries";
+import React from 'react'
+import { getPhotographs, getAllArt } from '../../lib/api'
+import HorizontalScroll from '@/components/HorizontalScroll'
+import Layout from '@/components/Layout'
 
-export default function index({ content, landingPage }) {
-  return <Galleries content={content} landingPage={landingPage} />;
+export default function galleries({ content, allArt }) {
+  const images = content.map((c) => c.featureImage)
+  const titles = content.map((c) => c.title)
+  const photographs = allArt.filter((art) => art.category === 'photographs')
+  const prints = allArt.filter((art) => art.category === 'prints')
+
+  return (
+    <Layout prints={prints} photographs={photographs}>
+      <main>
+        <HorizontalScroll content={content} images={images} titles={titles} />
+      </main>
+    </Layout>
+  )
 }
 
 export async function getStaticProps({ preview = false }) {
-  const content = await getPhotographs(preview);
-  const landingPage = await getLandingPage(preview);
+  const content = await getPhotographs(preview)
+  const allArt = await getAllArt(preview)
   return {
-    props: { preview, content, landingPage },
+    props: { preview, content, allArt },
     revalidate: 1,
-  };
+  }
 }

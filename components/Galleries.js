@@ -1,15 +1,15 @@
-import React from "react";
-import Layout from "./Layout";
-import { imageBuilder } from "lib/sanity";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react'
+import Layout from './Layout'
+import { imageBuilder } from 'lib/sanity'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Galleries({ content, landingPage }) {
-  console.log(content);
-  const { artPieces } = landingPage[0];
+  console.log(content)
+  const { artPieces } = landingPage[0]
   return (
     <Layout artPieces={artPieces}>
-      <div className="absolute top-0 pt-10 bg-white bg-opacity-95 min-h-screen grid grid-cols-4 gap-8 px-20 pb-20">
+      <div className="pt-10 bg-white bg-opacity-95 min-h-screen grid grid-cols-4 gap-8 px-20 pb-20">
         {content.map((gallery) => (
           <Link
             key={gallery._id}
@@ -31,5 +31,5 @@ export default function Galleries({ content, landingPage }) {
         ))}
       </div>
     </Layout>
-  );
+  )
 }
