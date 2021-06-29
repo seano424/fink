@@ -5,7 +5,7 @@ export default function LandingPageNav() {
   return (
     <nav className="tracking-wide text-gray-800 bg-white relative py-4 flex font-semibold text-xl justify-evenly">
       <Link href="/galleries">
-        <a>Galleries</a>
+        <a>Back to Galleries</a>
       </Link>
       <Link href="/about">
         <a>About The Artist</a>

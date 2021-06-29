@@ -1,10 +1,10 @@
-import { MdInsertEmoticon } from 'react-icons/md'
+import { MdContacts } from 'react-icons/md'
 
 export default {
-  name: 'aboutPage',
-  title: 'About Page',
+  name: 'contactPage',
+  title: 'Contact Page',
   type: 'document',
-  icon: MdInsertEmoticon,
+  icon: MdContacts,
   fields: [
     {
       name: 'name',
@@ -14,19 +14,10 @@ export default {
       type: 'string',
     },
     {
-      name: 'main_image',
-      description: 'This is the image that will be seen in your about page.',
-      title: 'Main Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: 'body',
+      title: 'Body',
       description:
         'Ok so a little funky thing going on here is that if you want to center content make it into a h3 header... It is just a way that I got around allowing some stuff to be centered and some stuff not to. The H3 text looks large in here but in the site it will be the same size as a normal text.',
-      title: 'Body',
       type: 'blockContent',
     },
   ],

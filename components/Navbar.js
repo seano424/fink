@@ -57,13 +57,22 @@ export default function Navbar({ prints, photographs }) {
             about the artist
           </a>
         </Link>
-        <Link href="/newsletter">
+        <Link href="/contact">
           <a
             className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
               pathname === '/contact' && 'text-design-1 underline'
             }`}
           >
-            contact & newsletter signup
+            contact
+          </a>
+        </Link>
+        <Link href="/newsletter">
+          <a
+            className={`capitalize  pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+              pathname === '/newsletter' && 'text-design-1 underline'
+            }`}
+          >
+            newsletter
           </a>
         </Link>
         <div className="self-center flex gap-2">

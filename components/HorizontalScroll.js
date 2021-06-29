@@ -1,25 +1,25 @@
 import React from 'react'
 import { imageBuilder } from 'lib/sanity'
 import { useEffect, useState } from 'react'
-import { HiArrowsExpand } from 'react-icons/hi'
 
 export default function HorizontalScroll({ images, handleLightbox }) {
   const [delta, setDelta] = useState(0)
 
   useEffect(() => {
     scroll && window.addEventListener('wheel', handleWheel, { passive: false })
+    scroll &&
+      window.addEventListener('keydown', handleKeyDown, { passive: false })
   }, [delta])
 
+  const handleKeyDown = (e) => {
+    console.log(e.which)
+  }
   const handleWheel = (e) => {
     if (!e.deltaY) {
       return
     }
     e.currentTarget.scrollLeft += e.deltaY + e.deltaX
     e.preventDefault()
-  }
-
-  const handleClick = (image, idx) => {
-    console.log(image, idx)
   }
 
   return (
@@ -36,13 +36,11 @@ export default function HorizontalScroll({ images, handleLightbox }) {
           className="min-w-max"
         >
           <img
-            onClick={() => handleClick(image, idx)}
             style={{ height: '500px' }}
             src={imageBuilder(image.asset).url()}
             alt="Adam Finkelston"
             className=""
           />
-          {/* <p className="text-xl">See more</p> */}
         </div>
       ))}
     </main>

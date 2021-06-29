@@ -10,6 +10,7 @@ import product from './product'
 import vendor from './vendor'
 import productVariant from './productVariant'
 import aboutPage from './aboutPage'
+import contactPage from './contactPage'
 import art from './art'
 import artPiece from './artPiece'
 import landingPage from './landingPage'
@@ -31,6 +32,7 @@ export default createSchema({
     artPiece,
     landingPage,
     aboutPage,
+    contactPage,
     product,
     vendor,
     category,
