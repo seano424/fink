@@ -51,6 +51,9 @@ a {
 .ril-caption-content.ril__captionContent {
   color: black;
 }
+.ril-image-current.ril__image.ril__imageDiscourager {
+  transform: translate3d(0px, 0px, 0px) scale3d(0.9, 0.9, 1) !important;
+}
 
 .scroll-box {
   position: relative;

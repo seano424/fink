@@ -13,7 +13,7 @@ export default function Tab({ items }) {
       <div
         className={`${
           openTab ? 'opacity-100' : 'opacity-0'
-        } transition-all duration-100 ease-linear absolute top-10 bg-gray-100 font-semibold w-52 p-4 flex flex-col`}
+        } transition-all duration-100 ease-linear absolute top-14 bg-gray-100 font-semibold w-52 p-4 flex flex-col`}
       >
         {items &&
           items.map((item) => (

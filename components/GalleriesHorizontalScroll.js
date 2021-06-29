@@ -11,6 +11,8 @@ export default function HorizontalScroll({ titles, images, content }) {
     window.addEventListener('resize', handleResize)
     if (dimensions > 832) {
       window.addEventListener('wheel', handleWheel, { passive: false })
+    } else {
+      window.removeEventListener('wheel', handleWheel, { passive: false })
     }
   }, [dimensions])
 
