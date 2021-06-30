@@ -22,5 +22,6 @@ module.exports = {
     siteKeywords: 'Prints Photography Prairie Village',
     siteUrl: 'https://adamfinkelston.com',
     siteImagePreviewUrl: '/images/home-page.png',
+    twitterHandle: '@finkelston',
   },
 }

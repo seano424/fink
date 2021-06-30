@@ -3,11 +3,13 @@ import Head from 'next/head'
 function SEO({ title }) {
   // customize meta properties
   // you can pass them as an argument like title in case you want to change for each page
-  const description = process.env.siteDescription
-  const keywords = process.env.siteKeywords
-  const siteURL = process.env.siteUrl
-  const twitterHandle = process.env.twitterHandle
-  const imagePreview = `${siteURL}/${process.env.siteImagePreviewUrl}`
+
+  const description =
+    'Artist website for Adam Finkelston who is an artist, publisher, and educator based in Prairie Village, KS.'
+  const keywords = 'Prints Photography Prairie Village, Kansas.'
+  const siteURL = 'https://adamfinkelston.com'
+  const twitterHandle = '@finkelston'
+  const imagePreview = `${siteURL}/images/home-page.png`
 
   return (
     <Head>
