@@ -45,7 +45,7 @@ export default function HorizontalScroll({
       onWheel={(e) =>
         setDelta((e.currentTarget.scrollLeft += e.deltaY + e.deltaX))
       }
-      className="flex-1 overflow-y-hidden flex gap-10 bg-gray-50 bg-opacity-70 pt-10 pb-10"
+      className="flex-1 overflow-y-hidden flex gap-10 pt-10 h-screen"
     >
       {images.map((image, idx) => (
         <div key={idx} className="min-w-max">
@@ -73,7 +73,7 @@ export default function HorizontalScroll({
                 src={imageBuilder(image.asset).url()}
                 alt="Adam Finkelston"
               />
-              <div className="flex relative shadow-2xl px-8 justify-center w-80 bg-gray-100 gap-10 uppercase tracking-widest m-auto">
+              <div className="flex relative shadow-2xl px-8 justify-center w-80 bg-gray-100 gap-x-10 uppercase tracking-widest m-auto">
                 <h1 className="italic">{image.title}</h1>
               </div>
             </div>
