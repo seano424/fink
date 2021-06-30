@@ -2,7 +2,6 @@ import Meta from '../components/Meta'
 import Navbar from './Navbar'
 
 export default function Layout({ children, artPieces, photographs, prints }) {
-  console.log(artPieces)
   return (
     <>
       <Meta />
@@ -19,3 +18,5 @@ export default function Layout({ children, artPieces, photographs, prints }) {
     </>
   )
 }
+
+//flex-col min-h-screen

@@ -14,7 +14,7 @@ export default function Prints({ gallery, art }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const gallery = await getGallery(params.slug, preview)
-  const art = await getAllArt(params)
+  const art = await getAllArt(preview)
   return {
     props: { preview, gallery, art },
     revalidate: 1,

@@ -1,41 +1,28 @@
-import { getLandingPage, getAllArt } from '../lib/api'
-import LandingPageImages from '@/components/LandingPageImages'
-import LandingPageNav from '@/components/LandingPageNav'
-import LandingPageName from '@/components/LandingPageName'
-import LandingPageBody from '@/components/LandingPageBody'
-import LandingPageGalleries from '@/components/LandingPageGalleries'
-import MailChimpFormContainer from '@/components/MailChimpFormContainer'
+import React from 'react'
+import { getAllArt, getLandingPage } from '@/lib/api'
+import Layout from '@/components/Layout'
+import HorizontalScroll from '@/components/HorizontalScroll'
 
-export default function Home({ content, art }) {
-  const { artPieces, color, name } = content[0]
-
+export default function galleries({ content, landingPage }) {
+  const artPieces = landingPage[0].artPieces.map((art) => art.asset)
+  const images = content.map((c) => c.featureImage)
+  const titles = content.map((c) => c.title)
+  const photographs = content.filter((art) => art.category === 'photographs')
+  const prints = content.filter((art) => art.category === 'prints')
   return (
-    <div className="flex h-screen flex-col">
-      <main className="flex-1">
-        <LandingPageImages artPieces={artPieces} />
-        <div className="absolute grid grid-cols-5 mr-40 -mb-40 bottom-2/3 z-50">
-          <div className="col-span-3"></div>
-          <div className="col-span-2">
-            <MailChimpFormContainer />
-          </div>
-        </div>
-        <article className="z-50 relative bg-white bg-opacity-100 -top-16 -mb-20">
-          <LandingPageName color={color} name={name} />
-          <LandingPageNav title={'View Galleries'} />
-          <LandingPageBody>
-            <LandingPageGalleries art={art} />
-          </LandingPageBody>
-        </article>
+    <Layout photographs={photographs} prints={prints} artPieces={artPieces}>
+      <main>
+        <HorizontalScroll content={content} images={images} titles={titles} />
       </main>
-    </div>
+    </Layout>
   )
 }
 
 export async function getStaticProps({ preview = false }) {
-  const content = await getLandingPage(preview)
-  const art = await getAllArt(preview)
+  const content = await getAllArt(preview)
+  const landingPage = await getLandingPage(preview)
   return {
-    props: { preview, content, art },
+    props: { preview, content, landingPage },
     revalidate: 1,
   }
 }
