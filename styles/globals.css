@@ -34,22 +34,21 @@ a {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-.ril__closeButton {
-  /* display: none !important; */
+/* .ril__closeButton {
   background-color: black !important;
-}
+} */
 
-.ril__toolbarItemChild,
+/* .ril__toolbarItemChild,
 .ril__builtinButton {
   background-color: black !important;
-}
+} */
 
 .ril__outer {
-  @apply bg-white bg-opacity-95 !important;
+  @apply bg-black bg-opacity-95 !important;
 }
 
 .ril-caption-content.ril__captionContent {
-  color: black;
+  color: whitesmoke;
 }
 .ril-image-current.ril__image.ril__imageDiscourager {
   transform: translate3d(0px, 0px, 0px) scale3d(0.9, 0.9, 1) !important;

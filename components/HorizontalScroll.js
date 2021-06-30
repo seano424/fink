@@ -73,7 +73,7 @@ export default function HorizontalScroll({
                 src={imageBuilder(image.asset).url()}
                 alt="Adam Finkelston"
               />
-              <div className="flex relative shadow-2xl px-8 justify-center w-80 bg-gray-100 gap-x-10 uppercase tracking-widest m-auto">
+              <div className="flex relative shadow-2xl px-8 py-1 justify-center w-80 bg-gray-100 gap-x-10 uppercase tracking-widest m-auto">
                 <h1 className="italic">{image.title}</h1>
               </div>
             </div>
