@@ -13,7 +13,7 @@ export default function galleries({ content, landingPage }) {
   const prints = content.filter((art) => art.category === 'prints')
   return (
     <Layout photographs={photographs} prints={prints} artPieces={artPieces}>
-      <main className="mt-10">
+      <main>
         <HorizontalScroll content={content} images={images} titles={titles} />
       </main>
     </Layout>

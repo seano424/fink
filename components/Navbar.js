@@ -13,7 +13,7 @@ export default function Navbar({ prints, photographs }) {
   }
 
   return (
-    <nav className="flex w-full h-12 items-center py-10 px-10 justify-between">
+    <nav className="flex w-full bg-gray-100 h-12 items-center py-10 px-10 justify-between">
       <NavLogo />
       <NavLinks prints={prints} photographs={photographs} />
       <Hamburger toggle={toggle} open={open} />
