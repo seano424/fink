@@ -36,6 +36,7 @@ export default function LightboxModal({ gallery }) {
           onContextMenu={handleContext}
         >
           <Lightbox
+            enableZoom={false}
             imagePadding={100}
             discourageDownloads={true}
             toolbarButtons={[
@@ -55,8 +56,8 @@ export default function LightboxModal({ gallery }) {
               />,
               <PinterestShareButton
                 url={url}
-                title={'Artwork by Adam Finkelston'}
-                image={urlFor(images[photoIndex]).url()}
+                description={'Artwork by Adam Finkelston'}
+                media={urlFor(images[photoIndex]).url()}
                 children={<PinterestIcon round={true} size={35} />}
                 className="relative top-3 mx-1 mr-4"
               />,

@@ -45,7 +45,7 @@ export default function HorizontalScroll({
       onWheel={(e) =>
         setDelta((e.currentTarget.scrollLeft += e.deltaY + e.deltaX))
       }
-      className="flex-1 overflow-y-hidden flex gap-10 py-4"
+      className="flex-1 overflow-y-hidden flex gap-10 pt-4 pb-2"
     >
       {images.map((image, idx) => (
         <div key={idx} className="min-w-max">

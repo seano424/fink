@@ -48,24 +48,6 @@ export default function NavLinks({ prints, photographs }) {
           Shop
         </a>
       </Link>
-      <Link href="/about">
-        <a
-          className={`capitalize pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
-            pathname === '/about' && 'text-design-1 underline'
-          }`}
-        >
-          about the artist
-        </a>
-      </Link>
-      <Link href="/contact">
-        <a
-          className={`capitalize pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
-            pathname === '/contact' && 'text-design-1 underline'
-          }`}
-        >
-          contact
-        </a>
-      </Link>
       <Link href="/newsletter">
         <a
           className={`capitalize pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
@@ -73,6 +55,25 @@ export default function NavLinks({ prints, photographs }) {
           }`}
         >
           newsletter
+        </a>
+      </Link>
+      <Link href="/about">
+        <a
+          className={`capitalize pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+            pathname === '/about' && 'text-design-1 underline'
+          }`}
+        >
+          about
+        </a>
+      </Link>
+
+      <Link href="/contact">
+        <a
+          className={`capitalize pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+            pathname === '/contact' && 'text-design-1 underline'
+          }`}
+        >
+          contact
         </a>
       </Link>
       <div className="self-center flex gap-2">
@@ -93,12 +94,12 @@ export default function NavLinks({ prints, photographs }) {
         <PinterestShareButton
           url={url}
           description={'Artwork by Adam Finkelston'}
-          media={'https://imgur.com/a/L2zOF7F'}
+          media={'https://i.imgur.com/KKB4IHq.png'}
           children={<PinterestIcon round={true} size={30} />}
         />
         <Link href="/cart" passHref>
-          <a className=" relative" aria-label="cart">
-            <FaShoppingCart className="w-6 m-auto" />
+          <a className="relative self-center" aria-label="cart">
+            <FaShoppingCart className="w-6 h-5 m-auto" />
             {cartItems === 0 ? null : (
               <div className="absolute top-0 right-0 text-xs bg-yellow-300 text-gray-900 font-semibold rounded-full py-1 px-2 transform translate-x-10 -translate-y-3">
                 {cartItems}

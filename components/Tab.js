@@ -10,15 +10,11 @@ export default function Tab({ links }) {
       onMouseLeave={() => setOpenTab(false)}
       className="flex flex-col cursor-pointer group"
     >
-      {links && (
-        <p className="mt-4 capitalize group-hover:underline group-hover:text-gray-400">
-          {links[0].category}
-        </p>
-      )}
+      {links && <p className="mt-4 capitalize">{links[0].category}</p>}
       <div
         className={`${
-          openTab ? 'opacity-100' : 'opacity-0'
-        } transition-all duration-100 ease-linear absolute top-14 z-50 bg-gray-100 font-semibold w-52 py-8 px-4 text-lg flex flex-col`}
+          openTab ? 'opacity-100' : 'opacity-0 h-0'
+        } transition-all duration-300 ease-linear absolute top-14 z-50 bg-gray-100 font-semibold w-52 py-8 px-4 text-lg flex flex-col`}
       >
         {links &&
           links.map((item) => (
