@@ -1,7 +1,6 @@
 import React from 'react'
-import { getAllArt, getLandingPage } from '../../lib/api'
+import { getAllArt, getLandingPage } from '@/lib/api'
 import Layout from '@/components/Layout'
-import GalleriesHorizontalScroll from '@/components/GalleriesHorizontalScroll'
 import HorizontalScroll from '@/components/HorizontalScroll'
 import Link from 'next/link'
 import Image from 'next/image'
