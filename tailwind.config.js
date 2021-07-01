@@ -25,6 +25,11 @@ module.exports = {
           },
         },
       },
+      height: {
+        400: '400px',
+        500: '500px',
+        600: '600px',
+      },
       colors: {
         palette: {
           lighter: '#F5F3FF',

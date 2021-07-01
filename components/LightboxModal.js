@@ -90,9 +90,9 @@ export default function LightboxModal({ gallery }) {
             <article className="pb-10 flex gap-4 justify-between mx-10">
               <h1 className="font-bold uppercase tracking-wider">{title}</h1>
               <div className="flex gap-4">
-                <Link href={`/${category}`}>
+                {/* <Link href={`/${category}`}>
                   <a className="underline">Back to {category}</a>
-                </Link>
+                </Link> */}
                 <Link href={`/galleries`}>
                   <a className="underline">Back to Galleries</a>
                 </Link>
