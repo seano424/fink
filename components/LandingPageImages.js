@@ -12,22 +12,10 @@ export default function LandingPageImages({ artPieces }) {
       : setImage([artPieces[0], artPieces[1]])
   }, [])
 
-  const imageStyle = {
-    height: '100vh',
-    width: '100%',
-    position: 'relative',
-  }
-
-  const dualImages = {
-    height: '100vh',
-    width: '50%',
-    position: 'relative',
-  }
-
   return (
-    <article style={{ zIndex: 0 }} className="sticky top-0 z-0">
+    <article style={{ zIndex: 0 }} className="">
       {image.length < 2 ? (
-        <div style={imageStyle}>
+        <div className="h-screen w-full absolute top-0 z-0">
           <Image
             src={imageBuilder(image[0]).url()}
             alt="Adam Finkelston's landing page image"
@@ -37,7 +25,7 @@ export default function LandingPageImages({ artPieces }) {
         </div>
       ) : (
         <div className="flex">
-          <div style={dualImages}>
+          <div className="h-screen w-1/2 absolute top-0 z-0">
             <Image
               alt="Adam Finkelston"
               src={imageBuilder(image[1]).url()}
@@ -46,7 +34,7 @@ export default function LandingPageImages({ artPieces }) {
               quality={100}
             />
           </div>
-          <div style={dualImages}>
+          <div className="h-screen w-1/2 absolute top-0 right-0 z-0">
             <Image
               alt="Adam Finkelston"
               src={imageBuilder(image[0]).url()}

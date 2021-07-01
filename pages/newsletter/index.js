@@ -1,40 +1,31 @@
-import {
-  getLandingPage,
-  getAllArt,
-  getAboutPage,
-  getContactPage,
-} from '../../lib/api'
-import LandingPageImages from '@/components/LandingPageImages'
-import LandingPageNav from '@/components/LandingPageNav'
-import LandingPageName from '@/components/LandingPageName'
+import React from 'react'
+import { getAllArt, getLandingPage } from '../../lib/api'
+import Layout from '@/components/Layout'
 import Newsletter from '@/components/Newsletter'
-import LandingPageLayout from '@/components/LandingPageLayout'
+import LandingPageImages from '@/components/LandingPageImages'
 
-export default function Home({ content, art, about, contact }) {
-  const { artPieces, color, name } = content[0]
-  const aboutBlockContent = about[0].body
-  const avatarImage = about[0].main_image.asset
-  const contactBlockContent = contact[0].body
-
+export default function About({ art, content }) {
+  const { artPieces } = content[0]
+  const photographs = art.filter((art) => art.category === 'photographs')
+  const prints = art.filter((art) => art.category === 'prints')
   return (
-    <LandingPageLayout>
-      <LandingPageImages artPieces={artPieces} />
-      <Newsletter />
-      <article className="z-50 relative bg-white bg-opacity-100 -top-16 -mb-20">
-        <LandingPageName color={color} name={name} />
-        <LandingPageNav title={'Back to Galleries'} />
-      </article>
-    </LandingPageLayout>
+    <Layout photographs={photographs} prints={prints}>
+      <main className="mt-20 z-50">
+        <Newsletter />
+        <LandingPageImages artPieces={artPieces} />
+      </main>
+    </Layout>
   )
 }
 
 export async function getStaticProps({ preview = false }) {
-  const content = await getLandingPage(preview)
   const art = await getAllArt(preview)
-  const about = await getAboutPage(preview)
-  const contact = await getContactPage(preview)
+  const content = await getLandingPage(preview)
   return {
-    props: { preview, content, art, about, contact },
+    props: { preview, art, content },
     revalidate: 1,
   }
+}
+
+{
 }

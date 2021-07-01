@@ -41,28 +41,44 @@ const SignupForm = ({ status, message, onValidated }) => {
         }}
       >
         {(formik) => (
-          <section>
+          <section className="relative z-20 mx-6 md:mx-20 lg:mx-40 xl:mx-80 bg-black rounded-lg px-2 sm:px-10 md:px-20 py-20">
             <article>
-              <h1 className="text-4xl px-8 py-12 rounded text-white font-black bg-black">
+              <h1 className="text-4xl text-center lg:px-8 py-6 rounded text-white font-black bg-black">
                 Send me the Adam Finkelston Artist Newsletter via e-mail!
               </h1>
             </article>
 
             <Form>
-              <article className="flex mt-2">
-                <MyTextInput
-                  className={`rounded-l w-full focus:outline-none focus:ring focus:border-blue-300 p-3`}
-                  name="email"
-                  type="email"
-                  placeholder="ludwigvonsiegen@gmail.com"
-                />
-                <button
-                  className={`bg-black rounded-r p-3 text-white self-start cursor-pointer`}
-                  disabled={formik.isSubmitting}
-                  type="submit"
-                >
-                  Subscribe
-                </button>
+              <article>
+                <div className="flex my-1 gap-1">
+                  <MyTextInput
+                    className={`rounded focus:outline-none focus:ring focus:border-blue-300 p-3`}
+                    name="firstName"
+                    type="text"
+                    placeholder="First name"
+                  />
+                  <MyTextInput
+                    className={`rounded focus:outline-none focus:ring focus:border-blue-300 p-3`}
+                    name="lastName"
+                    type="text"
+                    placeholder="Last name"
+                  />
+                </div>
+                <div className="flex">
+                  <MyTextInput
+                    className={`rounded-l w-full focus:outline-none focus:ring focus:border-blue-300 p-3`}
+                    name="email"
+                    type="email"
+                    placeholder="ludwigvonsiegen@gmail.com"
+                  />
+                  <button
+                    className={`bg-black border-8 border-green-300 rounded-r p-1 text-white self-start cursor-pointer`}
+                    disabled={formik.isSubmitting}
+                    type="submit"
+                  >
+                    Subscribe
+                  </button>
+                </div>
               </article>
               <article>
                 {status === 'sending' && (
