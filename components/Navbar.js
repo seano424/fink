@@ -13,11 +13,18 @@ export default function Navbar({ prints, photographs }) {
   }
 
   return (
-    <nav className="flex w-full bg-gray-100 h-12 items-center py-10 px-10 justify-between">
-      <NavLogo />
-      <NavLinks prints={prints} photographs={photographs} />
-      <Hamburger toggle={toggle} open={open} />
-      <MobileNavbar open={open} toggle={toggle} />
-    </nav>
+    <section
+      className="flex flex-row-reverse xl:flex-col items-center w-full mb-10 xl:mb-0 xl:py-8  justify-between
+    "
+    >
+      <div className="xl:self-center pr-10 xl:pr-0">
+        <NavLogo />
+      </div>
+      <nav className="flex items-center  xl:px-10 xl:pt-4 justify-between">
+        <NavLinks prints={prints} photographs={photographs} />
+        <Hamburger toggle={toggle} open={open} />
+        <MobileNavbar open={open} toggle={toggle} />
+      </nav>
+    </section>
   )
 }

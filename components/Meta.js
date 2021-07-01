@@ -4,8 +4,11 @@ import Head from 'next/head'
 export default function Meta() {
   return (
     <Head>
-      <title>Adam Finkelston</title>
-      {/* <link rel="shortcut icon" href="/images/favicon.ico" /> */}
+      <title>
+        Adam Finkelston - Photographer, art educator, publisher of The Hand
+        Magazine.
+      </title>
+      <link rel="shortcut icon" href="/images/favicon.ico" />
       <meta charset="utf-8"></meta>
       <meta
         name="description"

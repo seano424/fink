@@ -1,9 +1,12 @@
-import React from 'react'
+import Meta from './Meta'
 
 export default function LandingPageLayout({ children }) {
   return (
-    <div className="flex max-h-screen flex-col">
-      <main className="flex-1 ">{children}</main>
-    </div>
+    <>
+      <Meta />
+      <div className="flex max-h-screen flex-col">
+        <main className="flex-1 ">{children}</main>
+      </div>
+    </>
   )
 }

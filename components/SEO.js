@@ -13,6 +13,11 @@ function SEO({ title }) {
 
   return (
     <Head>
+      <title>
+        Adam Finkelston - Photographer, art educator, publisher of The Hand
+        Magazine.
+      </title>
+      <link rel="shortcut icon" href="/images/favicon.ico" />
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="description" content={description} />

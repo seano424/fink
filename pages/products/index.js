@@ -7,6 +7,7 @@ import Layout from '@/components/Layout'
 function IndexPage({ products, art }) {
   const photographs = art.filter((art) => art.category === 'photographs')
   const prints = art.filter((art) => art.category === 'prints')
+  console.log(products)
   return (
     <Layout photographs={photographs} prints={prints}>
       <div className="mx-auto max-w-6xl">

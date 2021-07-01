@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import { FaCaretDown } from 'react-icons/fa'
 
 export default function Tab({ links }) {
   const [openTab, setOpenTab] = useState(false)
@@ -10,7 +11,11 @@ export default function Tab({ links }) {
       onMouseLeave={() => setOpenTab(false)}
       className="flex flex-col cursor-pointer group"
     >
-      {links && <p className="mt-4 capitalize">{links[0].category}</p>}
+      {links && (
+        <div className="mt-4 uppercase flex items-center gap-1">
+          {links[0].category} <FaCaretDown />
+        </div>
+      )}
       <div
         className={`${
           openTab ? 'opacity-100' : 'opacity-0 h-0'
