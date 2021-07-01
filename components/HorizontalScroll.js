@@ -17,7 +17,7 @@ export default function HorizontalScroll({
   useEffect(() => {
     window.addEventListener('scroll', doSomething)
     window.addEventListener('resize', handleResize)
-    if (dimensions > 832) {
+    if (window.innerWidth > 832) {
       window.addEventListener('wheel', handleWheel, { passive: false })
       window.addEventListener('keypress', handleKey, { passive: false })
     }
@@ -62,7 +62,7 @@ export default function HorizontalScroll({
       onWheel={(e) =>
         setDelta((e.currentTarget.scrollLeft += e.deltaY + e.deltaX))
       }
-      className="flex-1 overflow-y-hidden flex gap-x-10 h-screen"
+      className="flex-1 overflow-y-hidden flex gap-x-10 md:h-screen"
     >
       {images.map((image, idx) => (
         <div key={idx} className="min-w-max">
@@ -84,7 +84,9 @@ export default function HorizontalScroll({
                   src={imageBuilder(image.asset).url()}
                   alt="Adam Finkelston"
                   className={`${
-                    isGoingDown ? 'h-600' : 'h-400'
+                    isGoingDown
+                      ? 'lg:h-600 md:h-600 sm:h-500 h-300'
+                      : 'lg:h-400 md:h-600 sm:h-500 h-300'
                   } transition-all delay-700 duration-1000 ease-in-out`}
                 />
               </a>

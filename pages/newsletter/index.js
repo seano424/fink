@@ -10,8 +10,10 @@ export default function About({ art, content }) {
   const prints = art.filter((art) => art.category === 'prints')
   return (
     <Layout photographs={photographs} prints={prints}>
-      <main className="mt-20 z-50">
-        <Newsletter />
+      <main>
+        <section className="z-20 relative flex justify-center pt-10 md:pt-20">
+          <Newsletter />
+        </section>
         <LandingPageImages artPieces={artPieces} />
       </main>
     </Layout>

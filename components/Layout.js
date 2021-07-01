@@ -14,7 +14,7 @@ export default function Layout({ children, artPieces, photographs, prints }) {
           prints={prints}
         />
       </section>
-      <section className="z-50">{children}</section>
+      <section className="pt-32 md:pt-0 relative md:static">{children}</section>
     </>
   )
 }

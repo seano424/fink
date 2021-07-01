@@ -6,16 +6,16 @@ export default function LandingPageImages({ artPieces }) {
   const [image, setImage] = useState([artPieces[2]])
   const random = Math.floor(Math.random() * artPieces.length)
 
-  useEffect(() => {
-    random > 1
-      ? setImage([artPieces[random]])
-      : setImage([artPieces[0], artPieces[1]])
-  }, [])
+  // useEffect(() => {
+  //   random > 1
+  //     ? setImage([artPieces[random]])
+  //     : setImage([artPieces[0], artPieces[1]])
+  // }, [])
 
   return (
-    <article style={{ zIndex: 0 }} className="">
+    <article>
       {image.length < 2 ? (
-        <div className="h-screen w-full absolute top-0 z-0">
+        <div className="sm:absolute h-screen w-full top-0 z-10">
           <Image
             src={imageBuilder(image[0]).url()}
             alt="Adam Finkelston's landing page image"

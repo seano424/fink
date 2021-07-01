@@ -4,8 +4,16 @@ export default function MobileNavbar({ open, toggle }) {
   return (
     <>
       {open && (
-        <div className="absolute w-full top-28 bg-white bg-opacity-70 h-screen z-50">
-          <div className="flex flex-col items-center py-20 mx-20 gap-7 rounded-full bg-white bg-opacity-60">
+        <div
+          className={`fixed w-full top-0 left-0 lg:top-64 bg-white bg-opacity-70 ${
+            open ? 'h-screen' : 'h-0'
+          } transition-all duration-200 ease-linear z-20`}
+        >
+          <div
+            className={`flex flex-col mt-40 sm:mt-20 items-center justify-center gap-y-7 w-full h-0 ${
+              open ? 'h-400 md:h-800' : 'h-0'
+            } rounded-full bg-gray-200 bg-opacity-70  transition-all duration-500 ease-linear border-2`}
+          >
             <Link href="/galleries">
               <a
                 onClick={toggle}

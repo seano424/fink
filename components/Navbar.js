@@ -13,8 +13,8 @@ export default function Navbar({ prints, photographs }) {
   }
 
   return (
-    <section className="flex xl:flex-col items-center w-full mb-10 xl:mb-0 xl:py-8  justify-between z-50 bg-white bg-opacity-95">
-      <div className="xl:self-center pl-10 xl:pr-0">
+    <section className="flex fixed md:static xl:flex-col py-6 items-center w-full  xl:mb-0   justify-between z-50 bg-white md:bg-opacity-95">
+      <div className="xl:self-center pl-10 md:pl-20 xl:pr-0 z-50">
         <NavLogo />
       </div>
       <nav className="flex items-center  xl:px-10 xl:pt-4 justify-between">
