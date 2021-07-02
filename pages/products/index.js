@@ -1,10 +1,10 @@
 import StoreHeading from '@/components/StoreHeading'
 import ProductListings from '@/components/ProductListings'
-import { getAllProductsInCollection } from '@/lib/shopify'
+import { getAllProductsInCollection, getProducts } from '@/lib/shopify'
 import { getAllArt, getLandingPage } from '../../lib/api'
 import Layout from '@/components/Layout'
 
-function IndexPage({ products, art, landingPage }) {
+function IndexPage({ products, art, landingPage, moreProducts }) {
   const photographs = art.filter((art) => art.category === 'photographs')
   const prints = art.filter((art) => art.category === 'prints')
   const artPieces = landingPage[0].artPieces.map((art) => art.asset)
@@ -20,6 +20,7 @@ function IndexPage({ products, art, landingPage }) {
 
 export async function getStaticProps({ preview }) {
   const products = await getAllProductsInCollection()
+  const moreProducts = await getProducts()
   const art = await getAllArt(preview)
   const landingPage = await getLandingPage(preview)
   return {
@@ -27,6 +28,7 @@ export async function getStaticProps({ preview }) {
       products,
       art,
       landingPage,
+      moreProducts,
     },
   }
 }

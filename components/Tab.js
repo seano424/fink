@@ -4,7 +4,6 @@ import { FaCaretDown } from 'react-icons/fa'
 
 export default function Tab({ links }) {
   const [openTab, setOpenTab] = useState(false)
-  links && console.log(links[0].category)
   return (
     <div
       onMouseOver={() => setOpenTab(true)}

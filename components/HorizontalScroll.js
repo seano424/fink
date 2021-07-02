@@ -25,7 +25,7 @@ export default function HorizontalScroll({
 
   useEffect(() => {
     window.addEventListener('scroll', handleScrollDownResizeImage)
-  }, [])
+  }, [delta])
 
   useEffect(() => {
     createWheelStopListener(window, function () {

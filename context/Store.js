@@ -35,7 +35,6 @@ export function CartProvider({ children }) {
   useEffect(() => {
     // do this to make sure multiple tabs are always in sync
     const onReceiveMessage = (e) => {
-      console.log(e)
       setLocalData(setCart, setCheckoutId, setCheckoutUrl)
     }
 
