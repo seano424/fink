@@ -13,7 +13,7 @@ export default function Navbar({ prints, photographs }) {
   }
 
   return (
-    <section className="flex fixed md:static xl:flex-col lg:py-16 py-10 items-center xl:mb-0 justify-between z-50 bg-white md:bg-opacity-40 gap-4">
+    <section className="flex fixed md:static xl:flex-col lg:py-16 py-10 items-center xl:mb-0 justify-between z-50 bg-white md:bg-opacity-95 w-screen gap-4">
       <div className="xl:self-center pl-10 md:pl-20 xl:pr-0 z-50">
         <NavLogo />
       </div>

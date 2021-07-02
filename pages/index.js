@@ -1,9 +1,7 @@
-import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getAllArt, getLandingPage } from '@/lib/api'
+import { getAllArt } from '@/lib/api'
 import { imageBuilder } from '@/lib/sanity'
-import { getProducts } from '@/lib/shopify'
 import Layout from '@/components/Layout'
 import HorizontalScroll from '@/components/HorizontalScroll'
 
