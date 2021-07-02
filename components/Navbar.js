@@ -13,11 +13,11 @@ export default function Navbar({ prints, photographs }) {
   }
 
   return (
-    <section className="flex fixed md:static xl:flex-col py-6 items-center w-full  xl:mb-0   justify-between z-50 bg-white md:bg-opacity-95">
+    <section className="flex fixed md:static xl:flex-col lg:py-16 py-10 items-center xl:mb-0 justify-between z-50 bg-white md:bg-opacity-40 gap-4">
       <div className="xl:self-center pl-10 md:pl-20 xl:pr-0 z-50">
         <NavLogo />
       </div>
-      <nav className="flex items-center  xl:px-10 xl:pt-4 justify-between">
+      <nav className="flex items-center justify-between">
         <NavLinks prints={prints} photographs={photographs} />
         <Hamburger toggle={toggle} open={open} />
         <MobileNavbar open={open} toggle={toggle} />

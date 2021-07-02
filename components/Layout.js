@@ -8,11 +8,7 @@ export default function Layout({ children, artPieces, photographs, prints }) {
       <section
         className={`flex overflow-y-scroll bg-white text-gray-700 text-sm justify-around dark:text-white`}
       >
-        <Navbar
-          artPieces={artPieces}
-          photographs={photographs}
-          prints={prints}
-        />
+        <Navbar photographs={photographs} prints={prints} />
       </section>
       <section className="pt-32 md:pt-0 relative md:static">{children}</section>
     </>

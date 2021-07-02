@@ -27,10 +27,10 @@ export default function NavLinks({ prints, photographs }) {
   const url = `https://fink.vercel.app${router.asPath}`
 
   return (
-    <article className="hidden xl:flex gap-7">
+    <article className="hidden xl:flex gap-12 text-gray-500">
       <Link href="/galleries">
         <a
-          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-900 hover:scale-110 transform hover:underline ${
             pathname === '/galleries' && 'text-design-1 underline'
           }`}
         >
@@ -41,7 +41,7 @@ export default function NavLinks({ prints, photographs }) {
       <Tab links={photographs} />
       <Link href="/products">
         <a
-          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-900 hover:scale-110 transform hover:underline ${
             pathname === '/shop' && 'text-design-1 underline'
           }`}
         >
@@ -50,7 +50,7 @@ export default function NavLinks({ prints, photographs }) {
       </Link>
       <Link href="/newsletter">
         <a
-          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-900 hover:scale-110 transform hover:underline ${
             pathname === '/newsletter' && 'text-design-1 underline'
           }`}
         >
@@ -59,7 +59,7 @@ export default function NavLinks({ prints, photographs }) {
       </Link>
       <Link href="/about">
         <a
-          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-900 hover:scale-110 transform hover:underline ${
             pathname === '/about' && 'text-design-1 underline'
           }`}
         >
@@ -69,7 +69,7 @@ export default function NavLinks({ prints, photographs }) {
 
       <Link href="/contact">
         <a
-          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-400 hover:underline ${
+          className={`uppercase pl-4 my-4 transition-all duration-100 ease-linear hover:text-gray-900 hover:scale-110 transform hover:underline ${
             pathname === '/contact' && 'text-design-1 underline'
           }`}
         >

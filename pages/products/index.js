@@ -1,15 +1,15 @@
 import StoreHeading from '@/components/StoreHeading'
 import ProductListings from '@/components/ProductListings'
 import { getAllProductsInCollection } from '@/lib/shopify'
-import { getAllArt } from '../../lib/api'
+import { getAllArt, getLandingPage } from '../../lib/api'
 import Layout from '@/components/Layout'
 
-function IndexPage({ products, art }) {
+function IndexPage({ products, art, landingPage }) {
   const photographs = art.filter((art) => art.category === 'photographs')
   const prints = art.filter((art) => art.category === 'prints')
-  console.log(products)
+  const artPieces = landingPage[0].artPieces.map((art) => art.asset)
   return (
-    <Layout photographs={photographs} prints={prints}>
+    <Layout artPieces={artPieces} photographs={photographs} prints={prints}>
       <div className="mx-auto max-w-6xl">
         <StoreHeading />
         <ProductListings products={products} />
@@ -21,10 +21,12 @@ function IndexPage({ products, art }) {
 export async function getStaticProps({ preview }) {
   const products = await getAllProductsInCollection()
   const art = await getAllArt(preview)
+  const landingPage = await getLandingPage(preview)
   return {
     props: {
       products,
       art,
+      landingPage,
     },
   }
 }

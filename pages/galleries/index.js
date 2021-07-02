@@ -27,7 +27,7 @@ export default function galleries({ content, landingPage }) {
               >
                 <a>
                   <div
-                    className={`flex relative shadow-2xl px-8 justify-center w-max bg-gray-100 uppercase tracking-widest m-auto`}
+                    className={`flex relative shadow-2xl px-8 justify-center w-min lg:w-max bg-gray-100 uppercase tracking-widest m-auto`}
                   >
                     <h1 className="italic">{titles[idx]}</h1>
                   </div>

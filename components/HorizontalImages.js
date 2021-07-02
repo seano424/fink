@@ -13,9 +13,9 @@ export default function HorizontalImages({
   return (
     <main
       // Uncomment this if you want down scroll to also scroll right...
-      // onWheel={(e) =>
-      //   setDelta((e.currentTarget.scrollLeft += e.deltaY + e.deltaX))
-      // }
+      onWheel={(e) =>
+        setDelta((e.currentTarget.scrollLeft += e.deltaY + e.deltaX))
+      }
       className="flex-1 overflow-y-hidden flex gap-x-10 md:h-screen pt-28 lg:pt-0"
     >
       {images.map((image, idx) => (

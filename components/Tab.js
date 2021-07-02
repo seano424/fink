@@ -19,7 +19,7 @@ export default function Tab({ links }) {
       <div
         className={`${
           openTab ? 'opacity-100' : 'opacity-0 h-0'
-        } transition-all duration-300 ease-linear absolute top-32 z-50 bg-gray-100 font-semibold w-52 py-8 px-4 text-lg flex flex-col`}
+        } transition-all duration-300 ease-linear absolute top-40 z-50 bg-gray-100 font-semibold w-52 py-8 px-4 text-lg text-gray-900 flex flex-col`}
       >
         {links &&
           links.map((item) => (
