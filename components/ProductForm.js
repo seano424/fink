@@ -77,7 +77,9 @@ function ProductForm({ title, handle, variants, setVariantPrice, mainImg }) {
           >
             {variants.map((item) => (
               <option id={item.node.id} key={item.node.id} value={item.node.id}>
-                {item.node.title}
+                {item.node.title === 'Default Title'
+                  ? 'Only one size'
+                  : item.node.title}
               </option>
             ))}
           </select>
