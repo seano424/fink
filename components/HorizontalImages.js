@@ -32,9 +32,7 @@ export default function HorizontalImages({
             >
               <a>
                 <div
-                  className={`flex ${
-                    isGoingDown && 'mt-10'
-                  } relative shadow-2xl px-8 justify-center w-max bg-gray-100 uppercase tracking-widest m-auto`}
+                  className={`flex relative shadow-2xl mt-10 px-8 justify-center w-max bg-gray-100 uppercase tracking-widest m-auto`}
                 >
                   <h1 className="italic">{titles[idx]}</h1>
                 </div>
