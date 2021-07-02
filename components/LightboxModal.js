@@ -79,7 +79,7 @@ export default function LightboxModal({ gallery }) {
         </div>
       ) : (
         <>
-          <section className="hidden md:flex">
+          <section className="hidden md:flex mt-6">
             <HorizontalScroll
               images={artPieces}
               handleLightbox={handleLightbox}
