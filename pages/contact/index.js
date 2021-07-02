@@ -22,7 +22,7 @@ export async function getStaticProps({ preview = false }) {
   const info = await getContactPage(preview)
   const landingPage = await getLandingPage(preview)
   return {
-    props: { preview, art, info },
+    props: { preview, art, info, landingPage },
     revalidate: 1,
   }
 }
