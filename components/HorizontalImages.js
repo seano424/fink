@@ -6,17 +6,18 @@ export default function HorizontalImages({
   titles,
   content,
   handleLightbox,
-  handleScrollResizeImage,
   isGoingDown,
   setDelta,
+  wheelStop,
 }) {
+  console.log('wheelStop:', wheelStop, 'isGoingDown:', isGoingDown)
   return (
     <main
       // Uncomment this if you want down scroll to also scroll right...
       onWheel={(e) =>
         setDelta((e.currentTarget.scrollLeft += e.deltaY + e.deltaX))
       }
-      className="flex-1 overflow-y-hidden flex gap-x-10 pt-28 lg:pt-0"
+      className="flex-1 overflow-y-hidden flex gap-x-10 md:h-screen pt-28 lg:pt-0"
     >
       {images.map((image, idx) => (
         <div key={idx} className="min-w-max">
@@ -37,7 +38,7 @@ export default function HorizontalImages({
                   src={imageBuilder(image.asset).url()}
                   alt="Adam Finkelston"
                   className={`${
-                    isGoingDown
+                    isGoingDown && wheelStop
                       ? 'lg:h-600 md:h-600 sm:h-500 h-300'
                       : 'lg:h-400 md:h-600 sm:h-500 h-300'
                   } transition-all delay-700 duration-1000 ease-in-out`}
@@ -47,9 +48,8 @@ export default function HorizontalImages({
           ) : (
             <div onClick={() => handleLightbox(idx)} className="cursor-pointer">
               <img
-                onScroll={handleScrollResizeImage}
                 className={`${
-                  isGoingDown ? 'h-600' : 'h-400'
+                  isGoingDown && wheelStop ? 'h-600' : 'h-400'
                 } transition-all delay-700 duration-1000 ease-in-out`}
                 src={imageBuilder(image.asset).url()}
                 alt="Adam Finkelston"

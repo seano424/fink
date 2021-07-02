@@ -8,19 +8,72 @@ export default function HorizontalScroll({
   handleLightbox,
 }) {
   const [lastScrollTop, setLastScrolltop] = useState(0)
+  const [wheelStop, setWheelStop] = useState(false)
   const [isGoingDown, setIsGoingDown] = useState(false)
   const [delta, setDelta] = useState(0)
   const [dimensions, setDimensions] = useState(0)
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScrollDownResizeImage)
-    window.addEventListener('resize', handleResize)
     if (window.innerWidth > 832) {
       window.addEventListener('wheel', handleWheel, { passive: false })
     }
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
   }, [dimensions])
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollDownResizeImage)
+  }, [])
+
+  useEffect(() => {
+    createWheelStopListener(window, function () {
+      setWheelStop(true)
+    })
+  }, [])
+
+  useEffect(() => {})
+  function createWheelStopListener(element, callback, timeout) {
+    var handle = null
+    var onScroll = function () {
+      if (handle) {
+        clearTimeout(handle)
+      }
+      handle = setTimeout(callback, timeout || 200) // default 200 ms
+    }
+    element.addEventListener('wheel', onScroll)
+    return function () {
+      element.removeEventListener('wheel', onScroll)
+    }
+  }
+
+  const handleScrollDownResizeImage = (e) => {
+    let st = window.pageYOffset
+    if (st > lastScrollTop) {
+      setIsGoingDown(true) //downscroll
+    } else {
+      setIsGoingDown(false) //upscroll
+    }
+    setLastScrolltop(st || document.documentElement.scrollTop)
+  }
+
+  function createWheelStopListener(element, callback, timeout) {
+    var handle = null
+    var onScroll = function () {
+      if (handle) {
+        clearTimeout(handle)
+      }
+      handle = setTimeout(callback, timeout || 200) // default 200 ms
+    }
+    element.addEventListener('wheel', onScroll)
+    return function () {
+      element.removeEventListener('wheel', onScroll)
+    }
+  }
+
   const handleWheel = (e) => {
+    setWheelStop(false)
     if (!e.deltaY) {
       return
     }
@@ -34,22 +87,9 @@ export default function HorizontalScroll({
     setDimensions(window.innerWidth)
   }
 
-  const handleScrollDownResizeImage = (e) => {
-    let st = window.pageYOffset
-    if (st > lastScrollTop) {
-      // downscroll
-      setIsGoingDown(true)
-    } else {
-      // upscroll
-      setIsGoingDown(false)
-    }
-    setTimeout(() => {
-      setLastScrolltop(st || document.documentElement.scrollTop)
-    }, 4000)
-  }
-
   return (
     <HorizontalImages
+      wheelStop={wheelStop}
       images={images}
       setDelta={setDelta}
       titles={titles}
