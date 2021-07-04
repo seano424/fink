@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { imageBuilder } from '@/lib/sanity'
 import { useEffect, useState } from 'react'
 
@@ -36,14 +37,18 @@ export default function HorizontalImages({
                 >
                   <h1 className="italic">{titles[idx]}</h1>
                 </div>
-                <img
-                  key={image._key}
-                  src={imageBuilder(image.asset).url()}
-                  alt="Adam Finkelston"
+                <div
                   className={`${
-                    state ? 'h-600' : 'h-400'
-                  } transition-all delay-700 duration-1000 ease-in-out`}
-                />
+                    state ? 'h-600 w-600' : 'h-400 w-400'
+                  } transition-all relative delay-700 duration-1000 ease-in-out`}
+                >
+                  <Image
+                    key={image._key}
+                    src={imageBuilder(image.asset).url()}
+                    alt="Adam Finkelston"
+                    layout="fill"
+                  />
+                </div>
               </a>
             </Link>
           ) : (
