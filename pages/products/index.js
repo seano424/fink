@@ -18,8 +18,8 @@ function IndexPage({ products, art, subscriptions, collections }) {
       <div className="mx-auto max-w-6xl">
         <StoreHeading />
         <ProductListings products={products} />
-        <StoreHeading />
-        <ProductListings products={subscriptions} />
+        {/* <StoreHeading /> */}
+        {/* <ProductListings products={subscriptions} /> */}
       </div>
     </Layout>
   )

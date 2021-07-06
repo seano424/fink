@@ -69,8 +69,8 @@ module.exports = {
         palette: {
           lighter: '#F5F3FF',
           light: '#DDD6FE',
-          primary: '#5B21B6',
-          dark: '#4C1D95',
+          primary: '#00b4d8',
+          dark: '#03045e',
         },
       },
       fontFamily: {
