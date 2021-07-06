@@ -10,10 +10,10 @@ function ProductForm({ title, handle, variants, setVariantPrice, mainImg }) {
   const addToCart = useAddToCartContext()
 
   const atcBtnStyle = isLoading
-    ? `pt-3 pb-2 bg-blue-300 text-white w-full mt-2 rounded-sm font-primary font-semibold text-xl flex 
-                      justify-center items-baseline  hover:bg-blue-900 opacity-25 cursor-none`
-    : `pt-3 pb-2 bg-blue-300 text-white w-full mt-2 rounded-sm font-primary font-semibold text-xl flex 
-                      justify-center items-baseline  hover:bg-blue-900`
+    ? `pt-3 pb-2 bg-palette-primary text-white w-full mt-2 rounded-sm font-primary font-semibold text-xl flex 
+                      justify-center items-baseline  hover:bg-palette-dark opacity-25 cursor-none`
+    : `pt-3 pb-2 bg-palette-primary text-white w-full mt-2 rounded-sm font-primary font-semibold text-xl flex 
+                      justify-center items-baseline  hover:bg-palette-dark`
 
   function handleSizeChange(e) {
     setVariantId(e)
@@ -63,7 +63,7 @@ function ProductForm({ title, handle, variants, setVariantPrice, mainImg }) {
             step="1"
             value={quantity}
             onChange={(e) => updateQuantity(e.target.value)}
-            className="text-gray-900 form-input border border-gray-300 w-16 rounded-sm focus:border-palette-light focus:ring-palette-light"
+            className="text-gray-900 py-1 pl-1 form-input border border-gray-300 w-16 rounded-sm focus:border-palette-light focus:ring-palette-light"
           />
         </div>
         <div className="flex flex-col items-start space-y-1 flex-grow">
@@ -73,7 +73,7 @@ function ProductForm({ title, handle, variants, setVariantPrice, mainImg }) {
             name="size-selector"
             onChange={(event) => handleSizeChange(event.target.value)}
             value={variantId}
-            className="form-select border border-gray-300 rounded-sm w-full text-gray-900 focus:border-palette-light focus:ring-palette-light"
+            className="form-select py-1 border border-gray-300 rounded-sm w-full text-gray-900 focus:border-palette-light focus:ring-palette-light"
           >
             {variants.map((item) => (
               <option id={item.node.id} key={item.node.id} value={item.node.id}>

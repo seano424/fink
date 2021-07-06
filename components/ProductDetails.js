@@ -4,20 +4,22 @@ import ProductInfo from '@/components/ProductInfo'
 import ProductForm from '@/components/ProductForm'
 
 function ProductDetails({ productData }) {
-  const [variantPrice, setVariantPrice] = useState(productData.variants.edges[0].node.price)
+  const [variantPrice, setVariantPrice] = useState(
+    productData.variants.edges[0].node.price
+  )
 
   return (
-    <div className="flex flex-col justify-between h-full w-full md:w-1/2 max-w-xs mx-auto space-y-4 min-h-128">
+    <div className="flex flex-col justify-between h-full w-full md:w-1/2 max-w-lg mx-auto space-y-4 min-h-128">
       <BackToProductButton />
-      <ProductInfo 
+      <ProductInfo
         title={productData.title}
         description={productData.description}
         price={variantPrice}
       />
-      <ProductForm 
+      <ProductForm
         title={productData.title}
         handle={productData.handle}
-        variants={productData.variants.edges} 
+        variants={productData.variants.edges}
         mainImg={productData.images.edges[0].node}
         setVariantPrice={setVariantPrice}
       />

@@ -12,11 +12,13 @@ function ProductImage({ images }) {
 
   return (
     <div className="w-full md:w-1/2 max-w-md border border-palette-lighter bg-white rounded shadow-lg">
-      <div className="relative h-96">
+      <div className="">
         <Image
           src={mainImg.originalSrc}
           alt={mainImg.altText}
-          layout="fill"
+          // layout="fill"
+          height={600}
+          width={600}
           className="transform duration-500 ease-in-out hover:scale-105"
         />
       </div>
