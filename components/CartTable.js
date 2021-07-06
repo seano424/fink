@@ -42,8 +42,8 @@ function CartTable({ cart }) {
                 <img
                   src={item.productImage.originalSrc}
                   alt={item.productImage.altText}
-                  height={64}
-                  width={64}
+                  height={200}
+                  width={200}
                   className={`hidden sm:inline-flex`}
                 />
                 <Link passHref href={`/products/${item.productHandle}`}>
@@ -62,7 +62,7 @@ function CartTable({ cart }) {
                   step="1"
                   value={item.variantQuantity}
                   onChange={(e) => updateItem(item.variantId, e.target.value)}
-                  className="text-gray-900 form-input border border-gray-300 w-16 rounded-sm focus:border-palette-light focus:ring-palette-light"
+                  className="text-gray-900 pl-1 py-1 form-input border border-gray-300 w-16 rounded-sm focus:border-palette-light focus:ring-palette-light"
                 />
               </td>
               <td className="font-primary text-base font-light px-4 sm:px-6 py-4 hidden sm:table-cell">
