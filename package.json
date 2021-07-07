@@ -25,6 +25,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@sanity/cli": "^2.12.2",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
