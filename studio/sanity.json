@@ -6,7 +6,7 @@
   },
   "project": {
     "name": "adamfinkelstontrial",
-    "basePath": "https://fink.vercel.app/studio"
+    "basePath": "/studio"
   },
   "plugins": [
     "@sanity/base",
