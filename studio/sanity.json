@@ -1,12 +1,12 @@
 {
   "root": true,
-  "project": {
-    "name": "adamfinkelstontrial",
-    "basePath": "/studio"
-  },
   "api": {
     "projectId": "ukels9pu",
     "dataset": "production"
+  },
+  "project": {
+    "name": "adamfinkelstontrial",
+    "basePath": "/studio"
   },
   "plugins": [
     "@sanity/base",
