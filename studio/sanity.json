@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "adamfinkelstontrial"
+    "name": "adamfinkelstontrial",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "ukels9pu",
@@ -19,9 +20,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
