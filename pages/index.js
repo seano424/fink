@@ -4,6 +4,7 @@ import { getAllArt } from '@/lib/api'
 import { imageBuilder } from '@/lib/sanity'
 import Layout from '@/components/Layout'
 import HorizontalScroll from '@/components/HorizontalScroll'
+import TestEnv from '@/components/TestEnv'
 
 export default function galleries({ content }) {
   const images = content.map((c) => c.featureImage)
@@ -17,6 +18,7 @@ export default function galleries({ content }) {
         <HorizontalScroll content={content} images={images} titles={titles} />
       </main>
       <main>
+        <TestEnv />
         <section className="lg:hidden flex flex-col my-10">
           <article className="grid grid-cols-2 gap-4">
             {images.map((image, idx) => (
