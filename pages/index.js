@@ -30,12 +30,14 @@ export default function galleries({ content }) {
                   >
                     <h1 className="italic">{titles[idx]}</h1>
                   </div>
-                  <Image
-                    src={imageBuilder(image.asset).url()}
-                    alt={`Adam Finkelston`}
-                    width={500}
-                    height={500}
-                  />
+                  {image !== undefined && (
+                    <Image
+                      src={imageBuilder(image.asset).url()}
+                      alt={`Adam Finkelston`}
+                      width={500}
+                      height={500}
+                    />
+                  )}
                 </a>
               </Link>
             ))}

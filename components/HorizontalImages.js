@@ -42,24 +42,28 @@ export default function HorizontalImages({
                     state ? 'h-600 w-600' : 'h-400 w-400'
                   } transition-all relative delay-700 duration-1000 ease-in-out`}
                 >
-                  <Image
-                    key={image._key}
-                    src={imageBuilder(image.asset).url()}
-                    alt="Adam Finkelston"
-                    layout="fill"
-                  />
+                  {image !== undefined && (
+                    <Image
+                      key={image._key}
+                      src={imageBuilder(image.asset).url()}
+                      alt="Adam Finkelston"
+                      layout="fill"
+                    />
+                  )}
                 </div>
               </a>
             </Link>
           ) : (
             <div onClick={() => handleLightbox(idx)} className="cursor-pointer">
-              <img
-                className={`${
-                  state ? 'h-600' : 'h-400'
-                } transition-all delay-700 duration-1000 ease-in-out`}
-                src={imageBuilder(image.asset).url()}
-                alt="Adam Finkelston"
-              />
+              {image !== undefined && (
+                <img
+                  className={`${
+                    state ? 'h-600' : 'h-400'
+                  } transition-all delay-700 duration-1000 ease-in-out`}
+                  src={imageBuilder(image.asset).url()}
+                  alt="Adam Finkelston"
+                />
+              )}
               <div className="flex text-sm relative shadow-2xl px-8 py-1 justify-center w-80 bg-gray-100 gap-x-10 uppercase tracking-widest m-auto">
                 <h1 className="italic">{image.title}</h1>
               </div>
